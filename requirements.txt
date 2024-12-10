@@ -1,7 +1,7 @@
-streamlit
-spotipy
-spotipy.oauth2
-python-dotenv
-pandas
-plotly
-scikit-learn
+pandas==1.5.2
+plotly==5.24.1
+plotly-express==0.4.1
+python-dotenv==1.0.1
+scikit-learn==1.2.1
+spotipy==2.24.0
+streamlit==1.40.1
