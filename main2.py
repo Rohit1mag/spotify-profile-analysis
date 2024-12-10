@@ -35,7 +35,7 @@ sp_oauth = SpotifyOAuth(
     client_secret=st.secrets['CLIENT_SECRET'],
     redirect_uri=st.secrets['REDIRECT_URI'],
     scope=SCOPE,
-    cache_path=None
+    cache_handler=spotipy.cache_handler.MemoryCacheHandler(),  # Add this
 )
 
 if not st.session_state.token_info:
