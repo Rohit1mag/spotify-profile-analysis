@@ -39,7 +39,7 @@ SCOPE = (
 sp_oauth = SpotifyOAuth(
     client_id=get_env('CLIENT_ID'),
     client_secret=get_env('CLIENT_SECRET'),
-    redirect_uri='http://localhost:8501',
+    redirect_uri=get_env('REDIRECT_URI'),
     scope=SCOPE,
     cache_path=None
 )
