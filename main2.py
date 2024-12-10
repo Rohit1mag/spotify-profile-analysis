@@ -12,12 +12,6 @@ from sklearn.preprocessing import StandardScaler
 
 load_dotenv()
 
-def get_env(secret):
-    try:
-        return st.secrets[secret]
-    except:
-        return os.getenv(secret)
-
 st.set_page_config(layout="wide")
 st.title('Advanced Spotify User Analysis Dashboard')
 
@@ -37,9 +31,9 @@ SCOPE = (
 )
 
 sp_oauth = SpotifyOAuth(
-    client_id=get_env('CLIENT_ID'),
-    client_secret=get_env('CLIENT_SECRET'),
-    redirect_uri=get_env('REDIRECT_URI'),
+    client_id=st.secrets['CLIENT_ID'],
+    client_secret=st.secrets['CLIENT_SECRET'],
+    redirect_uri=st.secrets['REDIRECT_URI'],
     scope=SCOPE,
     cache_path=None
 )
