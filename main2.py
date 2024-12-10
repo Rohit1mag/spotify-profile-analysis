@@ -9,7 +9,6 @@ from datetime import datetime
 from collections import Counter
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-import numpy as np
 
 load_dotenv()
 

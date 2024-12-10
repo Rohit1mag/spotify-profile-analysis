@@ -10,7 +10,7 @@ import streamlit as st
 # Load environment variables
 load_dotenv()
 
-# Get environment variable from Streamlit secrets or fallback to os.environ
+# Get environment variable from Streamlit secrets or fallback to os.environ (we actually don't need since secrets.toml exists)
 def get_env(secret):
     try:
         return st.secrets[secret]
