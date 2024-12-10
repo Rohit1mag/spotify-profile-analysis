@@ -13,6 +13,12 @@ import numpy as np
 
 load_dotenv()
 
+def get_env(secret):
+    try:
+        return st.secrets[secret]
+    except:
+        return os.getenv(secret)
+
 st.set_page_config(layout="wide")
 st.title('Advanced Spotify User Analysis Dashboard')
 
@@ -32,8 +38,8 @@ SCOPE = (
 )
 
 sp_oauth = SpotifyOAuth(
-    client_id=os.getenv('CLIENT_ID'),
-    client_secret=os.getenv('CLIENT_SECRET'),
+    client_id=get_env('CLIENT_ID'),
+    client_secret=get_env('CLIENT_SECRET'),
     redirect_uri='http://localhost:8501',
     scope=SCOPE,
     cache_path=None
