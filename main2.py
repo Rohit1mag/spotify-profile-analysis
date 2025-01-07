@@ -10,7 +10,7 @@ from collections import Counter
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-load_dotenv()
+# load_dotenv()
 
 st.set_page_config(layout="wide")
 st.title('Advanced Spotify User Analysis Dashboard')
@@ -206,7 +206,7 @@ if st.session_state.token_info:
             st.header("Genre Analysis")
             
             try:
-                top_artists = sp.current_user_top_artists(limit=10, time_range='long_term')
+                top_artists = sp.current_user_top_artists(limit=20, time_range='long_term')
                 if top_artists and top_artists['items']:
                     genres = []
                     for artist in top_artists['items']:
